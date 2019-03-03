@@ -1,0 +1,36 @@
+package com.example.ece387_taptap;
+
+import androidx.appcompat.app.AppCompatActivity;
+
+import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.TextView;
+
+public class MainActivity extends AppCompatActivity {
+    private TextView result;
+    private TextView intro1;
+    private TextView intro2;
+    private Button but;
+    int numb = 0;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+
+        result = findViewById(R.id.res);
+        intro1 = findViewById(R.id.intro1);
+        intro2 = findViewById(R.id.intro2);
+        but = findViewById(R.id.but);
+
+        but.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                numb++;
+                result.setText(String.valueOf(numb));
+            }
+        });
+    }
+}
